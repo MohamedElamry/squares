@@ -1,25 +1,20 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mohamed Elamry
-        </a>
-      </header>
-    </div>
-  );
+  let size = 6;
+  let rows = [];
+  for (let i = 0; i < size; i++) {
+    let cols = [];
+    for (let j = 0; j < size; j++) {
+      cols.push(
+        <div className="square col">
+          {i},{j}
+        </div>
+      );
+    }
+    rows.push(<div className="square row">{cols}</div>);
+  }
+  return <div className="App">{rows}</div>;
 }
 
 export default App;
